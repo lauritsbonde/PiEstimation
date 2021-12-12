@@ -18,18 +18,20 @@ const Estimate = () => {
 	};
 
 	const setManyPoints = () => {
-		const newPoints = [];
-		for (let i = 0; i < pointsToSet; i++) {
-			const x = Math.random() * radius;
-			const y = Math.random() * radius;
-			newPoints.push({ x, y });
-		}
-		if (newPoints.length + points.length <= maxPoints) {
-			setPoints([...points, ...newPoints]);
-			estimatePi([...points, ...newPoints]);
-		} else {
-			setPoints([...newPoints]);
-			estimatePi(newPoints);
+		if (pointsToSet > 0 && pointsToSet <= maxPoints) {
+			const newPoints = [];
+			for (let i = 0; i < pointsToSet; i++) {
+				const x = Math.random() * radius;
+				const y = Math.random() * radius;
+				newPoints.push({ x, y });
+			}
+			if (newPoints.length + points.length <= maxPoints) {
+				setPoints([...points, ...newPoints]);
+				estimatePi([...points, ...newPoints]);
+			} else {
+				setPoints([...newPoints]);
+				estimatePi(newPoints);
+			}
 		}
 	};
 
