@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import style from '../../Styles/estimate.module.css';
 import Point from './Point';
 
@@ -9,13 +9,6 @@ const Estimate = () => {
 	const [pointsInRectangle, setPointsInRectangle] = useState(0);
 	const radius = Math.round(Math.min(window.innerWidth, window.innerHeight) * 0.66);
 	const [points, setPoints] = useState([]);
-
-	useEffect(() => {
-		const box = squareRef.current.getBoundingClientRect();
-		const xCenter = box.left + box.width / 2;
-		const yCenter = box.top + box.height / 2;
-		setSquareCenter({ x: xCenter, y: yCenter });
-	}, [radius]);
 
 	const setNewPoint = () => {
 		const x = Math.random() * radius;
