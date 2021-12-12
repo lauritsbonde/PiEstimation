@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const Point = ({ x, y }) => {
+const Point = ({ x, y, delay }) => {
 	const hidden = {
 		x,
 		y,
 		opacity: 0,
-		scale: 100,
+		scale: 100 - Math.pow(delay, 0.6),
 	};
 
 	const visible = {
@@ -19,6 +19,7 @@ const Point = ({ x, y }) => {
 			ease: 'easeInOut',
 			type: 'spring',
 			stiffness: 150,
+			delay: Math.log(delay, 10),
 		},
 	};
 

@@ -3,7 +3,7 @@ import Pi from './Pi';
 import bgStyle from '../../Styles/background.module.css';
 
 const Background = () => {
-	const piAmount = Math.round(Math.random() * 50) + 10;
+	const piAmount = Math.round(Math.random() * 100) + 15;
 	const pis = [];
 	for (let i = 0; i < piAmount; i++) {
 		const pi = {

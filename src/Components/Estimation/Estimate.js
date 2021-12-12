@@ -9,6 +9,24 @@ const Estimate = () => {
 	const [pointsInRectangle, setPointsInRectangle] = useState(0);
 	const radius = Math.round(Math.min(window.innerWidth, window.innerHeight) * 0.66);
 	const [points, setPoints] = useState([]);
+	const [pointsToSet, setPointsToSet] = useState(0);
+
+	const pointsSettingChange = (e) => {
+		if (e.target.value > 0 && e.target.value < 10000) {
+			setPointsToSet(e.target.value);
+		}
+	};
+
+	const setManyPoints = () => {
+		const newPoints = [];
+		for (let i = 0; i < pointsToSet; i++) {
+			const x = Math.random() * radius;
+			const y = Math.random() * radius;
+			newPoints.push({ x, y });
+		}
+		setPoints([...points, ...newPoints]);
+		estimatePi(newPoints);
+	};
 
 	const setNewPoint = () => {
 		const x = Math.random() * radius;
@@ -45,13 +63,23 @@ const Estimate = () => {
 						setNewPoint();
 					}}
 				>
-					point
+					Add point
 				</button>
+				<p>
+					Set many points:{' '}
+					<input
+						type="number"
+						onChange={(e) => {
+							pointsSettingChange(e);
+						}}
+					/>{' '}
+					<button onClick={() => setManyPoints()}>Set!</button>
+				</p>
 			</div>
-			<div ref={squareRef} className={style.square} style={{ width: radius + 'px', height: radius + 'px', backgroundColor: 'black', border: '4px solid white', margin: '7.5% auto' }}>
+			<div className={style.square} style={{ width: radius + 'px', height: radius + 'px', backgroundColor: 'black', border: '4px solid white', margin: '7.5% auto' }}>
 				<div className={style.circle} style={{ width: radius + 'px', height: radius + 'px' }}></div>
 				{points.map((point, index) => (
-					<Point key={index} x={point.x} y={point.y} />
+					<Point key={index} x={point.x} y={point.y} delay={index} />
 				))}
 			</div>
 		</div>
