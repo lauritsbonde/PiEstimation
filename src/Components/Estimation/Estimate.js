@@ -1,9 +1,9 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import style from '../../Styles/estimate.module.css';
 import Point from './Point';
 
 const Estimate = () => {
-	const squareRef = useRef(null);
+	const maxPoints = 5000;
 	const [estimate, setEstimate] = useState(0);
 	const [pointsInCircle, setPointsInCircle] = useState(0);
 	const [pointsInRectangle, setPointsInRectangle] = useState(0);
@@ -12,7 +12,7 @@ const Estimate = () => {
 	const [pointsToSet, setPointsToSet] = useState(0);
 
 	const pointsSettingChange = (e) => {
-		if (e.target.value > 0 && e.target.value < 10000) {
+		if (e.target.value > 0 && e.target.value <= maxPoints) {
 			setPointsToSet(e.target.value);
 		}
 	};
@@ -24,17 +24,23 @@ const Estimate = () => {
 			const y = Math.random() * radius;
 			newPoints.push({ x, y });
 		}
-		setPoints([...points, ...newPoints]);
-		estimatePi(newPoints);
+		if (newPoints.length + points.length <= maxPoints) {
+			setPoints([...points, ...newPoints]);
+			estimatePi([...points, ...newPoints]);
+		} else {
+			setPoints([...newPoints]);
+			estimatePi(newPoints);
+		}
 	};
 
 	const setNewPoint = () => {
-		const x = Math.random() * radius;
-		const y = Math.random() * radius;
-		console.log(x, y);
-		const newPoints = [...points, { x, y }];
-		setPoints(newPoints);
-		estimatePi(newPoints);
+		if (points.length <= maxPoints) {
+			const x = Math.random() * radius;
+			const y = Math.random() * radius;
+			const newPoints = [...points, { x, y }];
+			setPoints(newPoints);
+			estimatePi(newPoints);
+		}
 	};
 
 	const estimatePi = (points) => {
@@ -75,6 +81,7 @@ const Estimate = () => {
 					/>{' '}
 					<button onClick={() => setManyPoints()}>Set!</button>
 				</p>
+				<p>Max {maxPoints} points | could slow your browser</p>
 			</div>
 			<div className={style.square} style={{ width: radius + 'px', height: radius + 'px', backgroundColor: 'black', border: '4px solid white', margin: '7.5% auto' }}>
 				<div className={style.circle} style={{ width: radius + 'px', height: radius + 'px' }}></div>

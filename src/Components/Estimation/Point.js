@@ -16,9 +16,9 @@ const Point = ({ x, y, delay }) => {
 		y: y,
 		transition: {
 			duration: 0.5,
-			ease: 'easeInOut',
-			type: 'spring',
-			stiffness: 150,
+			ease: delay < 500 ? 'easeInOut' : '',
+			type: delay < 500 ? 'spring' : '',
+			stiffness: delay < 500 ? 150 : 0,
 			delay: Math.log(delay, 10),
 		},
 	};
