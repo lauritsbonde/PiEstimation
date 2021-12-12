@@ -9,7 +9,6 @@ const Estimate = () => {
 	const [pointsInRectangle, setPointsInRectangle] = useState(0);
 	const radius = Math.round(Math.min(window.innerWidth, window.innerHeight) * 0.66);
 	const [points, setPoints] = useState([]);
-	const [squareCenter, setSquareCenter] = useState({ x: 0, y: 0 });
 
 	useEffect(() => {
 		const box = squareRef.current.getBoundingClientRect();
