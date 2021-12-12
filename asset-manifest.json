@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/PiEstimation/static/css/main.d1bacb47.chunk.css",
-    "main.js": "/PiEstimation/static/js/main.ee733239.chunk.js",
-    "main.js.map": "/PiEstimation/static/js/main.ee733239.chunk.js.map",
+    "main.js": "/PiEstimation/static/js/main.572e9849.chunk.js",
+    "main.js.map": "/PiEstimation/static/js/main.572e9849.chunk.js.map",
     "runtime-main.js": "/PiEstimation/static/js/runtime-main.3327af41.js",
     "runtime-main.js.map": "/PiEstimation/static/js/runtime-main.3327af41.js.map",
-    "static/js/2.93703589.chunk.js": "/PiEstimation/static/js/2.93703589.chunk.js",
-    "static/js/2.93703589.chunk.js.map": "/PiEstimation/static/js/2.93703589.chunk.js.map",
+    "static/js/2.1da9d285.chunk.js": "/PiEstimation/static/js/2.1da9d285.chunk.js",
+    "static/js/2.1da9d285.chunk.js.map": "/PiEstimation/static/js/2.1da9d285.chunk.js.map",
     "static/js/3.48f159b2.chunk.js": "/PiEstimation/static/js/3.48f159b2.chunk.js",
     "static/js/3.48f159b2.chunk.js.map": "/PiEstimation/static/js/3.48f159b2.chunk.js.map",
     "index.html": "/PiEstimation/index.html",
     "static/css/main.d1bacb47.chunk.css.map": "/PiEstimation/static/css/main.d1bacb47.chunk.css.map",
-    "static/js/2.93703589.chunk.js.LICENSE.txt": "/PiEstimation/static/js/2.93703589.chunk.js.LICENSE.txt"
+    "static/js/2.1da9d285.chunk.js.LICENSE.txt": "/PiEstimation/static/js/2.1da9d285.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.3327af41.js",
-    "static/js/2.93703589.chunk.js",
+    "static/js/2.1da9d285.chunk.js",
     "static/css/main.d1bacb47.chunk.css",
-    "static/js/main.ee733239.chunk.js"
+    "static/js/main.572e9849.chunk.js"
   ]
 }
