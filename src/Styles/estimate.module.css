@@ -1,0 +1,17 @@
+.square {
+	position: relative;
+	overflow: hidden;
+	opacity: 0.9;
+	backdrop-filter: blur(10px);
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.circle {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	box-sizing: border-box;
+}

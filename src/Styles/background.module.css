@@ -1,0 +1,11 @@
+.background {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	min-height: auto;
+	z-index: -2;
+}
+
+.pi {
+	position: absolute;
+}
