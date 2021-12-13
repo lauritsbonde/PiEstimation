@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/PiEstimation/static/css/main.94d3104d.chunk.css",
-    "main.js": "/PiEstimation/static/js/main.74362c1e.chunk.js",
-    "main.js.map": "/PiEstimation/static/js/main.74362c1e.chunk.js.map",
+    "main.js": "/PiEstimation/static/js/main.3749aefa.chunk.js",
+    "main.js.map": "/PiEstimation/static/js/main.3749aefa.chunk.js.map",
     "runtime-main.js": "/PiEstimation/static/js/runtime-main.3327af41.js",
     "runtime-main.js.map": "/PiEstimation/static/js/runtime-main.3327af41.js.map",
     "static/js/2.d1c7e06f.chunk.js": "/PiEstimation/static/js/2.d1c7e06f.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.3327af41.js",
     "static/js/2.d1c7e06f.chunk.js",
     "static/css/main.94d3104d.chunk.css",
-    "static/js/main.74362c1e.chunk.js"
+    "static/js/main.3749aefa.chunk.js"
   ]
 }
